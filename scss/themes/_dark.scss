@@ -1,0 +1,15 @@
+html.dark {
+    --header-bg-color: #171c28;
+    --body-bg-color: #292e39;
+    --link-hover-color: #0071dc;
+    --text-color: #fff;
+    --icon: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)
+        contrast(103%);
+
+    // Header cta
+    --header-cta-bg-color: #292e39;
+    --header-cta-shadow-color: rgba(0, 0, 0, 0.2);
+    --header-cta-avatar-bg-color: #292e39;
+    --header-cta-avatar-shadow: rgba(0, 0, 0, 0.08);
+    --header-cta-separate-color: #ededf6;
+}

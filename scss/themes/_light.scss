@@ -1,0 +1,15 @@
+html {
+    --header-bg-color: #eee;
+    --body-bg-color: #f6f6f6;
+    --link-hover-color: #0071dc;
+    --text-color: #1a162e;
+    --icon: brightness(0) saturate(100%) invert(5%) sepia(37%) saturate(3710%) hue-rotate(236deg) brightness(99%)
+        contrast(91%);
+
+    // Header cta
+    --header-cta-bg-color: #fff;
+    --header-cta-shadow-color: rgba(237, 237, 246, 0.2);
+    --header-cta-avatar-bg-color: #f0660b;
+    --header-cta-avatar-shadow: rgba(0, 0, 0, 0.08);
+    --header-cta-separate-color: #ededf6;
+}

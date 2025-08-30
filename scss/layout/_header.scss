@@ -1,0 +1,93 @@
+@use "../abstracts";
+
+.header {
+    background: var(--header-bg-color);
+}
+
+.icon {
+    filter: var(--icon);        
+}
+
+.top-bar {
+    @extend %flexAlignCenter;
+    justify-content: space-between;
+    padding: 30px 0px;
+
+    @include abstracts.screen(lg) {
+        padding: 15px 0px;
+    }
+
+    @include abstracts.screen(sm) {
+        padding: 10px 0px;
+    }
+
+    &__more-icon {
+        filter: var(--icon);
+    }
+}
+
+.navbar {
+    &__list {
+        @extend %flexAlignCenter;
+    }
+
+    &__item {
+    }   
+
+    &__link {
+        @extend %flexAlignCenter;
+        padding: 10px 15px;
+        gap: 6px;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 146.667%;
+        :hover {
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 8px;
+        }
+    }
+}
+
+.header-cta {
+    @extend %flexAlignCenter;
+    gap: 20px;
+
+    &__btn {
+        @extend %flexAlignCenter;
+        gap: 10px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background: var(--header-cta-bg-color);
+        box-shadow: 0 20px 60px 10px var(--header-cta-shadow-color);
+        &:first-child {
+            padding: 13px;
+        }
+
+        @include abstracts.screen(md) {
+        }
+    }
+
+        &__separate {
+        width: 1px;
+        height: 30px;
+        background: var(--header-cta-separate-color);
+        margin: 0 20px;
+    }
+
+    &__qut {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146.667%;
+        color: var(--text-color);
+    }
+
+    &__avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        background: var(--header-cta-avatar-bg-color);
+        box-shadow: 0 4px 14px 2px var(--header-cta-avatar-shadow);
+        object-fit: cover;
+    }
+}
