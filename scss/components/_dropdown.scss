@@ -1,0 +1,98 @@
+.dropdown {
+    --main-menu-height: min(582px, calc(100vh - 158px));
+    --main-menu-width: 292px;
+    --padding-dropdown-inner: 30px;
+    display: none;
+
+    padding-top: 54px;
+    position: absolute;
+    left: 0;
+    width: min(1240px, 100%);
+    &__inner {
+        background: var(--dropdơwn-bg-color);
+        height: var(--main-menu-height);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 40px 90px 20px var(--dropdown-shadow-color);
+    }
+}
+
+.top-menu {
+    position: relative;
+}
+
+.menu-main__wrapper {
+    width: var(--main-menu-width);
+    border-right: 1px solid var(--dropdown-border-color);
+    height: calc(var(--main-menu-height) - var(--padding-dropdown-inner) * 2);
+    overflow-y: auto;
+}
+
+.menu-main__wrapper--not-main {
+    width: auto;
+    border-right: none;
+}
+
+.menu-column {
+    display: flex;
+    gap: 14px;
+    &__media {
+        position: relative;
+        width: 36px;
+        height: 36px;
+    }
+
+    &__icon-1 {
+        position: absolute;
+        inset: 0;
+    }
+    &__icon-2 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 150%;
+        padding-bottom: 19px;
+        white-space: nowrap;
+    }
+
+    &__link {
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 142.857%;
+        padding: 7px 0;
+        white-space: wrap;
+
+        &:hover + .menu-sub__wrapper {
+            display: grid;
+        }
+    }
+}
+
+.menu-sub {
+    &__wrapper {
+        margin-left: var(--padding-dropdown-inner);
+        position: absolute;
+        inset: 0 0 0 var(--main-menu-width);
+        // display: grid;
+        display: none;
+        grid-template-columns: repeat(3, 1fr);        
+        height: calc(var(--main-menu-height) - var(--padding-dropdown-inner) * 2);
+        overflow-y: auto;
+
+        &--not-main {
+            left: 0;
+            grid-template-columns: repeat(4, 1fr);
+            display: grid;
+        }
+    }
+
+    &__columns .menu-column + .menu-column {
+        margin-top: 30px;
+    }
+}

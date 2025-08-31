@@ -5,10 +5,11 @@
 }
 
 .icon {
-    filter: var(--icon);        
+    filter: var(--icon);
 }
 
 .top-bar {
+    position: relative;
     @extend %flexAlignCenter;
     justify-content: space-between;
     padding: 30px 0px;
@@ -32,20 +33,19 @@
     }
 
     &__item {
-    }   
+        &:hover .dropdown {
+            display: grid;
+        }
+    }
 
     &__link {
         @extend %flexAlignCenter;
-        padding: 10px 15px;
+        height: 50px;
+        padding: 0px 15px;
         gap: 6px;
         font-size: 15px;
         font-weight: 500;
         line-height: 146.667%;
-        :hover {
-            background: var(--primary-color);
-            color: #fff;
-            border-radius: 8px;
-        }
     }
 }
 
@@ -68,7 +68,7 @@
         }
     }
 
-        &__separate {
+    &__separate {
         width: 1px;
         height: 30px;
         background: var(--header-cta-separate-color);
@@ -89,5 +89,6 @@
         background: var(--header-cta-avatar-bg-color);
         box-shadow: 0 4px 14px 2px var(--header-cta-avatar-shadow);
         object-fit: cover;
+        display: block;
     }
 }
