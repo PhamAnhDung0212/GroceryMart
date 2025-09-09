@@ -1,21 +1,30 @@
+@use "../abstracts";
+
 .dropdown {
     --main-menu-height: min(582px, calc(100vh - 158px));
     --main-menu-width: 292px;
     --padding-dropdown-inner: 30px;
-    
     display: none;
-    
-
+    // display: block;
     padding-top: 54px;
     position: absolute;
     left: 0;
     width: min(1240px, 100%);
+    @include abstracts.screen(lg) {
+        position: initial;
+        width: 100%;
+    }
+
     &__inner {
         background: var(--dropdơwn-bg-color);
         height: var(--main-menu-height);
         padding: 30px;
         border-radius: 20px;
         box-shadow: 0 40px 90px 20px var(--dropdown-shadow-color);
+        @include abstracts.screen(lg) {
+            background: initial;
+            box-shadow: none;
+        }
     }
 }
 
@@ -28,11 +37,11 @@
     border-right: 1px solid var(--dropdown-border-color);
     height: calc(var(--main-menu-height) - var(--padding-dropdown-inner) * 2);
     overflow-y: auto;
-}
-
-.menu-main__wrapper--not-main {
-    width: auto;
-    border-right: none;
+    @include abstracts.screen(lg) {
+        width: 100%;
+        border-right: none;
+        height: auto;
+    }
 }
 
 .menu-column {
@@ -62,8 +71,14 @@
         white-space: nowrap;
     }
 
-    &__item--active .menu-sub__wrapper {
+    &__item--active > .menu-sub__wrapper {
         display: grid;
+    }
+
+    &__item--active > .menu-column__link,
+    &:hover > .menu-column__link {
+        color: var(--link-hover-color);
+        font-weight: 600;
     }
 
     &__link {
@@ -73,10 +88,6 @@
         line-height: 142.857%;
         padding: 7px 0;
         white-space: wrap;
-
-        // &:hover + .menu-sub__wrapper {
-        //     display: grid;
-        // }
     }
 }
 
@@ -85,16 +96,14 @@
         margin-left: var(--padding-dropdown-inner);
         position: absolute;
         inset: 0 0 0 var(--main-menu-width);
-        // display: grid;
         display: none;
         grid-template-columns: repeat(3, 1fr);
         height: calc(var(--main-menu-height) - var(--padding-dropdown-inner) * 2);
         overflow-y: auto;
-
         &--not-main {
+            display: grid;
             left: 0;
             grid-template-columns: repeat(4, 1fr);
-            display: grid;
         }
     }
 

@@ -9,13 +9,16 @@ html {
 }
 
 body {
-    font-family: 'Gordita', sans-serif;
+    font-family: "Gordita", sans-serif;
     font-size: 1.6rem;
     color: var(--text-color);
-    background: var(--body-bg-color); ;
+    background: var(--body-bg-color);
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
@@ -32,9 +35,9 @@ a {
 
 a:hover {
     color: var(--link-hover-color);
+    font-weight: 600;
 }
 
 a.logo:hover {
     color: inherit;
 }
-
