@@ -2,7 +2,9 @@
     --main-menu-height: min(582px, calc(100vh - 158px));
     --main-menu-width: 292px;
     --padding-dropdown-inner: 30px;
+    
     display: none;
+    
 
     padding-top: 54px;
     position: absolute;
@@ -60,6 +62,10 @@
         white-space: nowrap;
     }
 
+    &__item--active .menu-sub__wrapper {
+        display: grid;
+    }
+
     &__link {
         display: block;
         font-size: 14px;
@@ -68,9 +74,9 @@
         padding: 7px 0;
         white-space: wrap;
 
-        &:hover + .menu-sub__wrapper {
-            display: grid;
-        }
+        // &:hover + .menu-sub__wrapper {
+        //     display: grid;
+        // }
     }
 }
 
@@ -81,7 +87,7 @@
         inset: 0 0 0 var(--main-menu-width);
         // display: grid;
         display: none;
-        grid-template-columns: repeat(3, 1fr);        
+        grid-template-columns: repeat(3, 1fr);
         height: calc(var(--main-menu-height) - var(--padding-dropdown-inner) * 2);
         overflow-y: auto;
 
