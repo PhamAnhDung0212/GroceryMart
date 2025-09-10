@@ -1247,7 +1247,18 @@ a.logo:hover {
 }
 
 .navbar__close-btn {
-  padding: 10px 10px;
+  padding: 10px 40px;
+}
+.navbar__buy-btn, .navbar__favorite-btn {
+  align-items: center;
+  padding: 10px 40px;
+  width: 100%;
+}
+.navbar__buy-icon, .navbar__favorite-icon {
+  margin-right: 7px;
+}
+.navbar__buy-qnt, .navbar__favorite-qnt {
+  margin-left: auto;
 }
 @media (max-width: 991.98px) {
   .navbar {
@@ -1287,6 +1298,8 @@ a.logo:hover {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    height: calc(100% - 47px);
+    overflow-y: auto;
   }
 }
 .navbar__item:hover .dropdown {
@@ -1295,12 +1308,6 @@ a.logo:hover {
 @media (max-width: 991.98px) {
   .navbar__item {
     width: 100%;
-  }
-  .navbar__item:hover .dropdown {
-    display: none;
-  }
-  .navbar__item--active .menu-main__wrapper {
-    display: block;
   }
 }
 .navbar__link {
@@ -1315,6 +1322,7 @@ a.logo:hover {
   .navbar__link {
     justify-content: space-between;
     width: 100%;
+    padding: 0px 40px;
   }
 }
 
@@ -1374,8 +1382,9 @@ a.logo:hover {
 }
 @media (max-width: 991.98px) {
   .dropdown {
+    display: block;
     position: initial;
-    width: 100%;
+    padding-top: 0;
   }
 }
 .dropdown__inner {
@@ -1387,8 +1396,10 @@ a.logo:hover {
 }
 @media (max-width: 991.98px) {
   .dropdown__inner {
-    background: initial;
+    height: auto;
+    background: transparent;
     box-shadow: none;
+    padding: 10px 40px;
   }
 }
 
@@ -1450,6 +1461,12 @@ a.logo:hover {
   padding: 7px 0;
   white-space: wrap;
 }
+@media (max-width: 991.98px) {
+  .menu-column__link {
+    padding: 14px 0;
+    width: 100%;
+  }
+}
 
 .menu-sub__wrapper {
   margin-left: var(--padding-dropdown-inner);
@@ -1460,12 +1477,29 @@ a.logo:hover {
   height: calc(var(--main-menu-height) - var(--padding-dropdown-inner) * 2);
   overflow-y: auto;
 }
+@media (max-width: 991.98px) {
+  .menu-sub__wrapper {
+    position: initial;
+    display: block;
+    height: auto;
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+}
 .menu-sub__wrapper--not-main {
   display: grid;
   left: 0;
   grid-template-columns: repeat(4, 1fr);
 }
+@media (max-width: 991.98px) {
+  .menu-sub__wrapper--not-main {
+    grid-template-columns: 1fr;
+  }
+}
 .menu-sub__columns .menu-column + .menu-column {
+  margin-top: 30px;
+}
+.menu-sub__columns + .menu-sub__columns {
   margin-top: 30px;
 }
 

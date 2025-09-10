@@ -13,7 +13,6 @@
     @extend %flexAlignCenter;
     justify-content: space-between;
     padding: 30px 0px;
-
     @include abstracts.screen(lg) {
         padding: 15px 0px;
     }
@@ -29,8 +28,23 @@
 
 .navbar {
     &__close-btn {
-        padding: 10px 10px;
+        padding: 10px 40px;
     }
+
+    &__buy-btn, &__favorite-btn {
+        align-items: center;
+        padding: 10px 40px;
+        width: 100%;
+    }
+
+    &__buy-icon, &__favorite-icon {
+        margin-right: 7px;
+    }
+
+    &__buy-qnt, &__favorite-qnt {
+        margin-left: auto;       
+    }
+
     @include abstracts.screen(lg) {
         position: fixed;
         inset: 0 50% 0 0;
@@ -38,7 +52,6 @@
         translate: -100%;
         transition: translate 0.3s;
         z-index: 10;
-
         &.show {
             @include abstracts.screen(lg) {
                 translate: 0;
@@ -70,6 +83,8 @@
             flex-direction: column;
             align-items: flex-start;
             width: 100%;
+            height: calc(100% - 47px);
+            overflow-y: auto;
         }
 
         // & .navbar__item:nth-of-type(2) .dropdown {
@@ -88,12 +103,13 @@
 
         @include abstracts.screen(lg) {
             width: 100%;
-            &:hover .dropdown {
-                display: none;
-            }
-            &--active .menu-main__wrapper {
-                display: block;
-            }
+            // &--active .dropdown {
+            //     display: block;
+            // }
+
+            // &--active .menu-main__wrapper {
+            //     display: grid;
+            // }
         }
     }
 
@@ -108,6 +124,8 @@
         @include abstracts.screen(lg) {
             justify-content: space-between;
             width: 100%;
+            padding: 0px 40px;
+            
         }
     }
 }

@@ -28,8 +28,28 @@
                     src="./assets/icons/arrow-left.svg"
                     alt=""
                 />
-            </button>
+            </button>            
+
             <ul class="navbar__list js-dropdown-list">
+                <button class="navbar__buy-btn d-none d-lg-flex">
+                <img
+                    class="navbar__buy-icon icon"
+                    src="./assets/icons/buy.svg"
+                    alt=""
+                />
+                <span class="navbar__buy-text">Card</span>
+                <span class="navbar__buy-qnt">3</span>
+            </button>
+
+            <button class="navbar__favorite-btn d-none d-lg-flex">
+                <img
+                    class="navbar__favorite-icon icon"
+                    src="./assets/icons/heart.svg"
+                    alt=""
+                />
+                <span class="navbar__favorite-text">Favorite</span>
+                <span class="navbar__favorite-qnt">3</span>
+            </button>
                 <li class="navbar__item">
                     <a href="#!" class="navbar__link"
                         >Departments
@@ -44,7 +64,9 @@
                             <div class="top-menu">
                                 <div class="menu-main__wrapper">
                                     <div class="menu-column">
-                                        <div class="menu-column__media d-lg-none">
+                                        <div
+                                            class="menu-column__media d-lg-none"
+                                        >
                                             <img
                                                 src="./assets/img/category/cate-1.1.svg"
                                                 alt=""
@@ -58,7 +80,9 @@
                                         </div>
                                         <div class="menu-column__content">
                                             <a href="#!"
-                                                ><h2 class="menu-column__title d-lg-none">
+                                                ><h2
+                                                    class="menu-column__title d-lg-none"
+                                                >
                                                     All Departments
                                                 </h2></a
                                             >
@@ -8189,7 +8213,10 @@
                 </li>
             </ul>
         </nav>
-        <div class="navbar__overlay js-dropdown js-toggle" toggle-target="#navbar"></div>
+        <div
+            class="navbar__overlay js-dropdown js-toggle"
+            toggle-target="#navbar"
+        ></div>
         <div class="header-cta">
             <button class="header-cta__btn d-md-none">
                 <img

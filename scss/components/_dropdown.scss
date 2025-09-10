@@ -4,15 +4,17 @@
     --main-menu-height: min(582px, calc(100vh - 158px));
     --main-menu-width: 292px;
     --padding-dropdown-inner: 30px;
+
     display: none;
     // display: block;
     padding-top: 54px;
-    position: absolute;
+    position: absolute; //Định vị theo top-bar
     left: 0;
     width: min(1240px, 100%);
     @include abstracts.screen(lg) {
+        display: block;
         position: initial;
-        width: 100%;
+        padding-top: 0;
     }
 
     &__inner {
@@ -22,14 +24,16 @@
         border-radius: 20px;
         box-shadow: 0 40px 90px 20px var(--dropdown-shadow-color);
         @include abstracts.screen(lg) {
-            background: initial;
+            height: auto;
+            background: transparent;
             box-shadow: none;
+            padding: 10px 40px;
         }
     }
 }
 
 .top-menu {
-    position: relative;
+    position: relative; //Để định vị sub-menu
 }
 
 .menu-main__wrapper {
@@ -88,26 +92,46 @@
         line-height: 142.857%;
         padding: 7px 0;
         white-space: wrap;
+        @include abstracts.screen(lg) {
+            padding: 14px 0;
+            width: 100%;
+        }
     }
 }
 
 .menu-sub {
     &__wrapper {
         margin-left: var(--padding-dropdown-inner);
-        position: absolute;
+        position: absolute; //Định vị theo top-menu
         inset: 0 0 0 var(--main-menu-width);
         display: none;
         grid-template-columns: repeat(3, 1fr);
-        height: calc(var(--main-menu-height) - var(--padding-dropdown-inner) * 2);
+        height: calc(
+            var(--main-menu-height) - var(--padding-dropdown-inner) * 2
+        );
         overflow-y: auto;
+        @include abstracts.screen(lg) {
+            position: initial;
+            display: block;
+            height: auto;
+            grid-template-columns: 1fr;
+            margin-left: 0;
+        }
         &--not-main {
             display: grid;
             left: 0;
             grid-template-columns: repeat(4, 1fr);
+            @include abstracts.screen(lg) {
+                grid-template-columns: 1fr;
+            }
         }
     }
 
     &__columns .menu-column + .menu-column {
+        margin-top: 30px;
+    }
+
+    &__columns + &__columns {
         margin-top: 30px;
     }
 }
