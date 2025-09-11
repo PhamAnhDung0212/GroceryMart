@@ -12,7 +12,6 @@
     left: 0;
     width: min(1240px, 100%);
     @include abstracts.screen(lg) {
-        display: block;
         position: initial;
         padding-top: 0;
     }
@@ -106,13 +105,11 @@
         inset: 0 0 0 var(--main-menu-width);
         display: none;
         grid-template-columns: repeat(3, 1fr);
-        height: calc(
-            var(--main-menu-height) - var(--padding-dropdown-inner) * 2
-        );
+        height: calc(var(--main-menu-height) - var(--padding-dropdown-inner) * 2);
         overflow-y: auto;
         @include abstracts.screen(lg) {
             position: initial;
-            display: block;
+            display: none;
             height: auto;
             grid-template-columns: 1fr;
             margin-left: 0;
